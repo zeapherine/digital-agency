@@ -1,0 +1,305 @@
+<html>
+	<%- include("partials/header"); -%>
+
+	<section
+		id="service-div1"
+		style="background-image: url(images/service-page.jpg);"
+	>
+		<div class="row">
+			<div class="col-lg-6 service-heading-1">
+				<h1 class="service-heading2">
+					<span class="yellow">WHAT'S</span> IN IT
+				</h1>
+				<h1 class="service-heading2">
+					<span class="underline">FOR </span><span class="yellow">YOU</span>
+				</h1>
+				<h3 class="service-heading-3">
+					Let us help you set your brand goals and bring our expertise in
+					Design, Web, Advertising and Technology.
+				</h3>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="form-div">
+					<form
+						class="pure-form pure-form-stacked"
+						action="/form"
+						method="POST"
+						enctype="text/plain"
+					>
+						<fieldset>
+							<div class="pure-g">
+								<div class="pure-u-1 pure-u-md-1-3">
+									<label for="first-name"></label>
+									<input
+										id="first-name"
+										class="pure-u-23-24"
+										type="text"
+										name="fname"
+										placeholder="First Name"
+									/>
+								</div>
+
+								<div class="pure-u-1 pure-u-md-1-3">
+									<label for="last-name"></label>
+									<input
+										id="last-name"
+										class="pure-u-23-24"
+										type="text"
+										name="lname"
+										placeholder="Last Name"
+									/>
+								</div>
+
+								<div class="pure-u-1 pure-u-md-1-3">
+									<label for="email"></label>
+									<input
+										id="email"
+										class="pure-u-23-24"
+										type="email"
+										name="email"
+										placeholder="E-Mail"
+										required
+									/>
+								</div>
+
+								<div class="pure-u-1 pure-u-md-1-3">
+									<label for="email"></label>
+									<input
+										id="phone"
+										class="pure-u-23-24"
+										type="tel"
+										name="phone"
+										placeholder="Phone Number"
+										required
+									/>
+								</div>
+
+								<div class="pure-u-1 pure-u-md-1-3">
+									<label for="city"></label>
+									<input
+										id="city"
+										class="pure-u-23-24"
+										type="text"
+										name="city"
+										placeholder="City"
+									/>
+								</div>
+
+								<div class="pure-u-1 pure-u-md-1-3">
+									<label for="state">Service</label>
+									<select
+										id="slct1"
+										class="pure-input-1-2"
+										name="slct1"
+										onchange="populate(this.id, 'slct2')"
+										required
+									>
+										<option value="">....Select Service</option>
+										<option value="design">Digital Designing</option>
+										<option value="marketing">Digital Marketing</option>
+										<option value="printing">Printing</option>
+									</select>
+								</div>
+
+								<div class="pure-u-1 pure-u-md-1-3">
+									<select name="slct2" id="slct2" required></select>
+								</div>
+							</div>
+
+							<button type="submit" class="pure-button pure-button-primary">
+								Submit
+							</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			let designing = [
+				"|",
+				"logo|Logo",
+				"website|Website",
+				"socialMediaContent|Social Media Content",
+				"megazine|Megazine",
+				"prospectus|Prospectus",
+				"brochures|Brochures",
+				"bussinessCards|Bussiness Cards",
+				"bookCover|Book Cover",
+				"contentWriting|Content Writing",
+				"productPhotography|Product Photography",
+				"packagingDesign|Packaging Design",
+				"pptDesign|PPT Design"
+			];
+			let marketing = [
+				"|",
+				"brandDevelopment|Brand Development",
+				"emailMarketing|Email Marketing",
+				"campaignDevelopment|Campaign Development",
+				"socialMediaMarketing|Social Media Marketing",
+				"videoMarketing|Video Marketing",
+				"analytics|Analytics",
+				"onlineAdvertisement|Online Advertisement",
+				"youtubeMarketing|YouTube Marketing",
+				"contentMarketing|Content Marketing",
+				"linkedinMarketing|Linkedin Marketing",
+				"emailMarketing|Email Marketing",
+				"influencerMarketing|Influencer Marketing"
+			];
+			let printing = [
+				"|",
+				"offset|Multi-color Offset Printing",
+				"megazineP|Megazine",
+				"newsLetter|News Letter",
+				"bookp|Book",
+				"prospectusp|Prospectus",
+				"calender|Calender",
+				"flexPrinting|Flex Printing",
+				"menu|Menu",
+				"leaflets|Leaflets & Brochures",
+				"certificates|Certificates",
+				"booklets|Booklets"
+			];
+
+			function populate(s1, s2) {
+				var s1 = document.getElementById(s1);
+				var s2 = document.getElementById(s2);
+
+				s2.innerHTML = "...Select Service";
+
+				if (s1.value == "design") {
+					var optionArray = designing;
+				} else if (s1.value == "marketing") {
+					var optionArray = marketing;
+				} else if (s1.value == "printing") {
+					var optionArray = printing;
+				}
+				for (var option in optionArray) {
+					var pair = optionArray[option].split("|");
+					var newOption = document.createElement("option");
+					newOption.value = pair[0];
+					newOption.innerHTML = pair[1];
+					s2.options.add(newOption);
+				}
+			}
+		</script>
+	</section>
+
+	<div class="divider"></div>
+
+	<section class="services-div container-fluid">
+		<div class="row">
+			<div class="col-lg-6">
+				<img
+					class="services-images"
+					src="images/graphic-designer.jpg"
+					alt="graphic-designer-image"
+				/>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="services-text">
+					<h2>Disigning and Digital Creation</h2>
+					<h3>
+						Generate Lorem Ipsum placeholder text. Select the number of
+						characters, words, sentences or
+					</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+						culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+
+					<a
+						role="button"
+						class="btn btn-outline-info btn-lg btn-know-more"
+						href="/services/designing"
+					>
+						KNOW MORE
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="services-text">
+					<h2>Digitial Marketing</h2>
+					<h3>
+						Generate Lorem Ipsum placeholder text. Select the number of
+						characters, words, sentences or
+					</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+						culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+
+					<a
+						role="button"
+						class="btn btn-outline-info btn-lg btn-know-more"
+						href="/services/marketing"
+					>
+						KNOW MORE
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<img
+					class="services-images"
+					src="images/graphic-designer.jpg"
+					alt="graphic-designer-image"
+				/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-6">
+				<img
+					class="services-images"
+					src="images/graphic-designer.jpg"
+					alt="graphic-designer-image"
+				/>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="services-text">
+					<h2>Printing</h2>
+					<h3>
+						Generate Lorem Ipsum placeholder text. Select the number of
+						characters, words, sentences or
+					</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat. Duis aute irure dolor in
+						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+						pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+						culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+
+					<a
+						role="button"
+						class="btn btn-outline-info btn-lg btn-know-more"
+						href="/services/printing"
+					>
+						KNOW MORE
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<%- include("partials/clients"); -%> <%- include("partials/footer"); -%>
+</html>
